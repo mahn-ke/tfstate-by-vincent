@@ -1,0 +1,25 @@
+#stream
+version: "3.7"
+
+services:
+  tfstate-postgres:
+    container_name: tfstate_postgres
+    image: postgres:17.5
+    restart: always
+    environment:
+      - POSTGRES_DB=tfstate
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PORT=5432
+    healthcheck:
+      test: ["CMD-SHELL", "sh -c 'pg_isready -U ${POSTGRES_USER} -d tfstate'"]
+      interval: 5s
+      timeout: 90s
+      retries: 3
+    volumes:
+      - tfstate_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  tfstate_data:
