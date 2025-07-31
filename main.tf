@@ -16,10 +16,10 @@ resource "random_password" "ddns_password" {
     special = false
 }
 
-resource "allinkl_ddns" "uptime_api" {
+resource "allinkl_ddns" "tfstate" {
     dyndns_comment   = "TF State Backend"
     dyndns_password  = random_password.ddns_password.result
     dyndns_zone      = "mahn.ke"
-    dyndns_label     = "statebackend.by.vincent"
+    dyndns_label     = "tfstate.by.vincent"
     dyndns_target_ip = "88.99.215.101"
 }
