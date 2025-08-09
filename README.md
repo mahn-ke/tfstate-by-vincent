@@ -1,3 +1,3 @@
-# homeassistant.by.vincent.mahn.ke
+# Terraform state PostgreSQL backend
 
-Generates a [Home Assistant](https://www.home-assistant.io/) instance at [homeassistant.by.vincent.mahn.ke](https://homeassistant.by.vincent.mahn.ke).
+Hosts a PostgreSQL database to use as a [Terraform backend](https://developer.hashicorp.com/terraform/language/backend/pg).
