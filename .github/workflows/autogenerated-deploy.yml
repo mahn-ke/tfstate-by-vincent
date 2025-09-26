@@ -10,8 +10,11 @@
 name: Deploy service, generate certificates, and update NGINX configuration
 
 on:
-  workflow_call:
-
+  push:
+    branches: [ "main" ]
+  pull_request:
+  workflow_dispatch:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
