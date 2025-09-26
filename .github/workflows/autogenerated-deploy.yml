@@ -73,7 +73,7 @@ jobs:
   deploy:
     runs-on: hetzner2
     if: ${{ !cancelled() && github.event_name != 'pull_request' }}
-    needs: [build]
+    needs: [build, prepare-postgres]
     steps:
       - name: Expose GitHub environment as shell variables
         env:
