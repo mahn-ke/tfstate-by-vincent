@@ -4,7 +4,7 @@ version: "3.7"
 services:
   tfstate-postgres:
     container_name: tfstate_postgres
-    image: postgres:17.8
+    image: postgres:17.9
     restart: always
     environment:
       - POSTGRES_DB=tfstate
